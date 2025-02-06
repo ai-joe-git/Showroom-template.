@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electric Vehicle Charging Stations</title>
+  <title>Electric Vehicle Charging Solutions | PowerCharge</title>
   <style>
     /* General Styles */
     body {
@@ -49,12 +49,110 @@
       font-weight: bold;
     }
 
-    /* Product List */
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+      text-align: center;
+      padding: 0 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-content h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      color: #ddd;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* About Us Section */
+    .about-us {
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-us h2 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about-us p {
+      font-size: 1.1em;
+      color: #ddd;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Company Info Section */
+    .company-info {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .company-info .info-block {
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .company-info .info-block h3 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .company-info .info-block p {
+      font-size: 1em;
+      color: #ddd;
+    }
+
+    /* Product List Section */
     .product-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 20px;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .product {
@@ -102,39 +200,46 @@
     .product a:hover {
       background: rgba(255, 255, 255, 0.4);
     }
-
-    /* Additional Text */
-    .intro-text {
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin: 20px;
-      border-radius: 15px;
-    }
-
-    .intro-text h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    .intro-text p {
-      font-size: 1.1em;
-      color: #ddd;
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Electric Vehicle Charging Stations</h1>
+    <h1>PowerCharge</h1>
   </header>
 
-  <div class="intro-text">
-    <h2>Welcome to the Future of EV Charging</h2>
-    <p>Discover our premium range of electric vehicle charging solutions designed for both home and commercial use. Experience fast, reliable, and eco-friendly charging with cutting-edge technology.</p>
-  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Powering the Future of Mobility</h2>
+      <p>At PowerCharge, we provide cutting-edge electric vehicle charging solutions for homes, businesses, and public spaces. Join the green revolution and experience fast, reliable, and eco-friendly charging.</p>
+      <a href="#products">Explore Our Products</a>
+    </div>
+  </section>
 
-  <div class="product-list">
+  <!-- About Us Section -->
+  <section class="about-us">
+    <h2>About Us</h2>
+    <p>PowerCharge is a leading innovator in electric vehicle charging technology. Founded in 2020, our mission is to make EV charging accessible, efficient, and sustainable for everyone. With a team of experts and a commitment to quality, we’re driving the future of clean energy.</p>
+  </section>
+
+  <!-- Company Info Section -->
+  <section class="company-info">
+    <div class="info-block">
+      <h3>10,000+</h3>
+      <p>Chargers Installed Worldwide</p>
+    </div>
+    <div class="info-block">
+      <h3>24/7</h3>
+      <p>Customer Support</p>
+    </div>
+    <div class="info-block">
+      <h3>5 Years</h3>
+      <p>Warranty on All Products</p>
+    </div>
+  </section>
+
+  <!-- Product List Section -->
+  <section class="product-list" id="products">
     <div class="product">
       <img src="https://source.unsplash.com/400x300/?electric,car,charger" alt="EV Charger 7kW">
       <h2>EV Charger 7kW</h2>
@@ -153,6 +258,6 @@
       <p>Compact and portable charger for on-the-go charging.</p>
       <a href="product3.html">View Details</a>
     </div>
-  </div>
+  </section>
 </body>
 </html>
