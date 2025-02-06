@@ -32,6 +32,109 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* New Navigation Styles */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 15px;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-symbol::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #00a8b5, #ff8c42);
+      border-radius: 50%;
+      transform: rotate(45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero Section with Local Image */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('IMG_20250206_170214.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Rest of the original styles remain unchanged */
     body::before {
       content: '';
       position: absolute;
@@ -44,7 +147,6 @@
       animation: moveBackground 10s infinite;
     }
 
-    /* Header */
     header {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
@@ -57,21 +159,6 @@
       margin: 0;
       font-size: 2.5em;
       font-weight: bold;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 80vh;
-      text-align: center;
-      padding: 0 20px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .hero-content h2 {
@@ -110,7 +197,6 @@
       100% { opacity: 1; }
     }
 
-    /* About Us Section */
     .about-us {
       padding: 60px 20px;
       background: rgba(255, 255, 255, 0.1);
@@ -134,7 +220,6 @@
       text-align: center;
     }
 
-    /* Company Info Section */
     .company-info {
       display: flex;
       justify-content: space-around;
@@ -161,7 +246,6 @@
       color: #ddd;
     }
 
-    /* Product List Section */
     .product-list {
       display: flex;
       flex-wrap: wrap;
@@ -222,9 +306,20 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>PowerCharge</h1>
-  </header>
+  <!-- New Navigation -->
+  <div class="nav-container">
+    <nav class="glass-nav">
+      <div class="logo">
+        <div class="logo-symbol"></div>
+        <span>PowerCharge</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#fig">Fig</a>
+      </div>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -236,9 +331,9 @@
   </section>
 
   <!-- About Us Section -->
-  <section class="about-us">
+  <section class="about-us" id="about">
     <h2>About Us</h2>
-    <p>PowerCharge is a leading innovator in electric vehicle charging technology. Founded in 2020, our mission is to make EV charging accessible, efficient, and sustainable for everyone. With a team of experts and a commitment to quality, we’re driving the future of clean energy.</p>
+    <p>PowerCharge is a leading innovator in electric vehicle charging technology. Founded in 2020, our mission is to make EV charging accessible, efficient, and sustainable for everyone. With a team of experts and a commitment to quality, we're driving the future of clean energy.</p>
   </section>
 
   <!-- Company Info Section -->
@@ -280,7 +375,6 @@
       <p><strong>Price:</strong> £299.99</p>
       <a href="product3.html">View Details</a>
     </div>
-    <!-- Add more products here -->
   </section>
 </body>
 </html>
