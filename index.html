@@ -5,46 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Electric Vehicle Charging Solutions | PowerCharge</title>
   <style>
-    /* General Styles */
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #fff;
-      overflow-x: hidden;
       line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      font-weight: 600;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    /* Animated Background */
-    @keyframes moveBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* New Navigation Styles */
+    /* Navigation Styles */
     .nav-container {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1200px;
       z-index: 1000;
-      padding: 1rem 2rem;
     }
 
     .glass-nav {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-radius: 15px;
       padding: 1rem 2rem;
       display: flex;
@@ -57,26 +49,17 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
     }
 
     .logo-symbol {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-symbol::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
       background: linear-gradient(135deg, #00a8b5, #ff8c42);
       border-radius: 50%;
-      transform: rotate(45deg);
     }
 
     .nav-links {
@@ -90,23 +73,27 @@
       text-decoration: none;
       padding: 0.5rem 1rem;
       border-radius: 8px;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
 
     .nav-links a:hover {
       background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
-    /* Hero Section with Local Image */
+    /* Hero Section */
     .hero {
+      min-height: 100vh;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-      overflow: hidden;
+      padding: 80px 20px;
+      background-image: url('IMG_20250206_170214.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
     .hero::before {
@@ -114,157 +101,131 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('IMG_20250206_170214.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 168, 181, 0.7),
+        rgba(255, 140, 66, 0.7)
+      );
+      z-index: 1;
     }
 
     .hero-content {
+      position: relative;
+      z-index: 2;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
-      padding: 2rem;
-      border-radius: 15px;
+      -webkit-backdrop-filter: blur(12px);
+      padding: 2.5rem;
+      border-radius: 20px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       max-width: 800px;
+      width: 90%;
       margin: 0 auto;
-    }
-
-    /* Rest of the original styles remain unchanged */
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8));
-      z-index: -1;
-      animation: moveBackground 10s infinite;
-    }
-
-    header {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      padding: 20px 0;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      font-weight: bold;
     }
 
     .hero-content h2 {
-      font-size: 3.5em;
-      margin-bottom: 10px;
-      animation: fadeIn 2s ease-in-out;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
     }
 
     .hero-content p {
-      font-size: 1.2em;
-      color: #ddd;
-      max-width: 800px;
-      margin: 0 auto;
-      animation: fadeIn 3s ease-in-out;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .hero-content a {
       display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
+      padding: 1rem 2rem;
       background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      color: white;
       text-decoration: none;
-      border-radius: 25px;
-      transition: background 0.3s ease, transform 0.3s ease;
-      animation: fadeIn 4s ease-in-out;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
 
     .hero-content a:hover {
-      background: rgba(255, 255, 255, 0.4);
-      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
+    /* About Section */
     .about-us {
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin: 20px auto;
+      border-radius: 20px;
+      max-width: 1200px;
+      width: 90%;
     }
 
     .about-us h2 {
-      font-size: 2.5em;
+      font-size: clamp(2rem, 4vw, 2.5rem);
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
 
     .about-us p {
-      font-size: 1.1em;
-      color: #ddd;
+      font-size: clamp(1rem, 2vw, 1.1rem);
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
     }
 
+    /* Company Info Section */
     .company-info {
-      display: flex;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
       padding: 60px 20px;
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin: 20px auto;
+      border-radius: 20px;
+      max-width: 1200px;
+      width: 90%;
     }
 
-    .company-info .info-block {
+    .info-block {
       text-align: center;
-      max-width: 300px;
+      padding: 1rem;
     }
 
-    .company-info .info-block h3 {
-      font-size: 2em;
-      margin-bottom: 10px;
+    .info-block h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 0.5rem;
     }
 
-    .company-info .info-block p {
-      font-size: 1em;
-      color: #ddd;
-    }
-
+    /* Product List Section */
     .product-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       padding: 60px 20px;
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin: 20px auto;
+      border-radius: 20px;
+      max-width: 1200px;
+      width: 90%;
     }
 
     .product {
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-radius: 15px;
-      width: 300px;
-      margin: 15px;
-      padding: 20px;
+      padding: 1.5rem;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -275,38 +236,88 @@
     }
 
     .product img {
-      max-width: 100%;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
       border-radius: 10px;
+      margin-bottom: 1rem;
     }
 
     .product h2 {
-      font-size: 1.5em;
-      margin: 15px 0;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .product p {
-      font-size: 0.9em;
-      color: #ddd;
+      margin-bottom: 1rem;
     }
 
     .product a {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
+      padding: 0.8rem 1.5rem;
       background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      color: white;
       text-decoration: none;
       border-radius: 25px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .product a:hover {
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-container {
+        width: 95%;
+        top: 10px;
+      }
+
+      .glass-nav {
+        padding: 0.8rem 1rem;
+      }
+
+      .logo span {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .hero-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .company-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+      }
+
+      .hero-content {
+        padding: 1.5rem 1rem;
+      }
+
+      .product-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- New Navigation -->
+  <!-- Navigation -->
   <div class="nav-container">
     <nav class="glass-nav">
       <div class="logo">
